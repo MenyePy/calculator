@@ -62,9 +62,21 @@
 }
 
 .btn:hover {
-    border: 4px ridge greenyellow;
+    border: 4px ridge slategrey;
 }
 
 .number {
     background-color: lightgreen;
+}
+
+.basic {
+    background-color: lightblue;
+}
+
+.special {
+    background-color: orange;
+}
+
+.equals {
+    background-color: lightcoral;
 }
