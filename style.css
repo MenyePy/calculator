@@ -14,7 +14,14 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    min-width: 95vw;
     border: 1px solid red;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid #848484;
 }
 
 .textarea {
@@ -22,8 +29,8 @@
     flex-direction: column;
     border: 1px solid #000;
     background-color: #fff;
-    font-size: 20px;
-    padding: 20px;
+    font-size: 28px;
+    padding: 4vh 3vh;
 }
 
 .top {
@@ -41,6 +48,7 @@
 
 .row {
     display: flex;
+    min-height: 8vh;
 }
 .toparea {
     font-size: 16px;
@@ -48,6 +56,16 @@
 }
 
 .btn {
-    width: 80px;
-    padding: 20px 10px;
+    width: 5vw;
+    padding: 2vh 1vw;
+    border: 2px inset #ddd;
+    font-size: 20px;
+}
+
+.btn:hover {
+    border: 4px ridge greenyellow;
+}
+
+.number {
+    background-color: lightgreen;
 }
