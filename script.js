@@ -27,9 +27,10 @@ const currentOp = document.querySelector('#pre');
 const topDisplay = document.querySelector('.top');
 let numbers = [];
 let ops = [];
+let decimal = false;
 
 function enter(n){
-    if (display.textContent != 0){
+    if (display.textContent != '0'){
         if (typeof(n) == 'number'){
             display.textContent += n.toString();
         }
@@ -43,12 +44,16 @@ function special(n){
         currentOp.textContent = '';
         display.textContent = 0;
         topDisplay.textContent = '...';
+        decimal = false;
         numbers = [];
         ops = [];
     } else if (n == 2){
         if (display.textContent.length > 1){
             let ichi = display.textContent.split('');
-            ichi.pop();
+            let a = ichi.pop();
+            if (a == '.'){
+                decimal = false;
+            }
             display.textContent = ichi.join('');
         } else if (display.textContent != 0) {
             display.textContent = 0;
@@ -71,7 +76,10 @@ function special(n){
             }
         }
     } else if (n == 3){
-        display.textContent += '.';
+        if (!decimal){
+            display.textContent += '.';
+            decimal = true;
+        }
     } else if (n == 4){
         display.textContent += '(';
     } else if (n == 5){
@@ -109,6 +117,7 @@ function operation(n){
         topDisplay.textContent = numbers.slice(-1);
         display.textContent = 0;
     }
+    decimal = false;
 }
 
 function operate(){
